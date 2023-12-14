@@ -35,15 +35,15 @@ inputEmail.addEventListener("focus", () => {
 });
 
 inputEmail.addEventListener("blur", (e) => {
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const valor = e.target.value.trim();
     if (valor === "") {
         e.target.style.backgroundColor = "#f0627f";
         alert("O campo não pode estar vazio.");
-    } else if (!valor.match(regexEmail)) {
+    } else if (!regexEmail.test(valor)) {
         e.target.style.backgroundColor = "#f0627f";
         alert("Por favor, digite um e-mail válido.");
-    }else{
+    } else {
         e.target.style.backgroundColor = "#5ac45a";
     }
 });
@@ -87,17 +87,19 @@ inputMensagem.addEventListener("blur", (e) => {
     e.target.style.backgroundColor = "";
 });
 
-btnSubmit.addEventListener("click", (e) => {    
-    if (!(inputNome.value.trim() 
-    && inputEmail.value.trim() 
-    && inputTelefone.value.trim() 
-    && selectPlano.value.trim() 
-    && inputMensagem.value.trim() !== "")) {
+btnSubmit.addEventListener("click", (e) => {
+    const nomeValido = (inputNome.value.trim() !== "" && inputNome.value.length >= 3 && inputNome.value.length <= 50 && /^[a-zA-Z ]+$/.test(inputNome.value));
+    const emailValido = (inputEmail.value.trim() !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputEmail.value));
+    const telefoneValido = (inputTelefone.value.trim() !== "" && /^[0-9]+$/.test(inputTelefone.value));
+    const planoValido = (document.querySelector("select[name='planos']").value.trim() !== "");
+    const mensagemValida = true;
+
+    if (!(nomeValido && emailValido && telefoneValido && planoValido && mensagemValida)) {
         e.preventDefault();
         alert("Por favor, corrija os erros no formulário antes de enviar.");
     } else {
+        e.preventDefault();
         alert("Formulário enviado com sucesso!");
         window.location.href = 'index.html';
     }
 });
-
