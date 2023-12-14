@@ -97,12 +97,7 @@ btnSubmit.addEventListener("click", (e) => {
         alert("Por favor, corrija os erros no formulário antes de enviar.");
     } else {
         alert("Formulário enviado com sucesso!");
-        window.location.href = 'dicas.html';
+        window.location.href = 'index.html';
     }
 });
-
-
-
-
-
 

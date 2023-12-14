@@ -49,6 +49,11 @@
     
 }
 
+h1{
+    align-items: center;
+    text-align: center;
+}
+
 .dica-img{
     width: 4rem;
     height: 4rem;
