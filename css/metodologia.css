@@ -59,6 +59,22 @@ a:hover {
     border-radius: 0.3rem;    
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bs-yellow);
+    color: var(--main-color);
+    border-radius: 35px;
+    margin: 0.5rem 2.5rem !important;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+.button:hover {
+    color: var(--bs-white);
+}
+
 h1 {
     text-align: center;
     color: var(--bs-white);
@@ -66,7 +82,7 @@ h1 {
 }
 
 img {
-    width: 150%;
+    width: 145%;
 }
 
 .content {
