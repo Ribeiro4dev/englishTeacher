@@ -8,8 +8,9 @@
 * Dicas
 * Contato
 
+##Link para apresentação:
+https://www.canva.com/design/DAF3X265PgA/11uwUETI4ZulpBwe0_2QjQ/view?utm_content=DAF3X265PgA&utm_campaign=designshare&utm_medium=link&utm_source=editor
 
 ## link para o deploy:
-
 https://guiillhe.github.io/talent-cloud/
 
